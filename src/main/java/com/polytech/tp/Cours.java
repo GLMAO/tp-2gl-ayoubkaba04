@@ -10,7 +10,19 @@ public class Cours implements ICours {
     private String niveau;
     private boolean necessiteProjecteur;
 
-    
+    // Constructeur public pour le Builder
+    public Cours(CoursBuilder builder) {
+        this.matiere = builder.matiere;
+        this.enseignant = builder.enseignant;
+        this.salle = builder.salle;
+        this.date = builder.date;
+        this.heureDebut = builder.heureDebut;
+        this.estOptionnel = builder.estOptionnel;
+        this.niveau = builder.niveau;
+        this.necessiteProjecteur = builder.necessiteProjecteur;
+    }
+
+    // Ancien constructeur (peut être supprimé ou gardé si nécessaire)
     public Cours(String matiere, String enseignant, String salle, String date, 
                  String heureDebut, boolean estOptionnel, String niveau, boolean necessiteProjecteur) {
         this.matiere = matiere;
@@ -33,7 +45,9 @@ public class Cours implements ICours {
         return 1.5; 
     }
     
-    
+    // Ajouter getMatiere() pour l'interface ICours
     public String getMatiere() { return matiere; }
     public String getEnseignant() { return enseignant; }
+    public String getSalle() { return salle; }
+    public String getDate() { return date; }
 }
